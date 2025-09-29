@@ -1,0 +1,57 @@
+{
+  "name": "AllergyCard",
+  "type": "object",
+  "properties": {
+    "food_allergen": {
+      "type": "string",
+      "description": "The food the user is allergic to"
+    },
+    "severity_level": {
+      "type": "string",
+      "enum": [
+        "mild",
+        "moderate",
+        "severe",
+        "life_threatening"
+      ],
+      "description": "Severity of the allergic reaction"
+    },
+    "severity_description": {
+      "type": "string",
+      "description": "Detailed description of allergy severity based on questionnaire"
+    },
+    "questionnaire_responses": {
+      "type": "array",
+      "description": "Array of responses to the 30 assessment questions",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question_id": {
+            "type": "number"
+          },
+          "response": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "symptoms": {
+      "type": "array",
+      "description": "List of symptoms user experiences",
+      "items": {
+        "type": "string"
+      }
+    },
+    "emergency_medication": {
+      "type": "string",
+      "description": "Emergency medication needed (e.g., EpiPen)"
+    },
+    "original_language": {
+      "type": "string",
+      "description": "Language the card was originally created in"
+    }
+  },
+  "required": [
+    "food_allergen"
+  ]
+}
